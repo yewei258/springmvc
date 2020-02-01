@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+	<property name="LOG_HOME" value="/mnt/log/springmvc1" />
+	<property name="APP_LEVEL" value="DEBUG"></property>
+    <!-- 输出到控制台 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+
+ 	<logger name="root" level="${APP_LEVEL}">
+ 		<appender-ref ref="STDOUT"/>
+ 	</logger>
+
+
+    <logger name="org.mybatis.spring" level="INFO"/>
+    <!-- 打印sql-->
+    <logger name="com.unicom.mapper" level="INFO"/>
+</configuration>

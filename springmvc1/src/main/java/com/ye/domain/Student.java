@@ -1,4 +1,4 @@
-package com.ye.web.domain;
+package com.ye.domain;
 
 import java.io.Serializable;
 

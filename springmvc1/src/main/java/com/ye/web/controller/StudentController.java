@@ -1,32 +1,28 @@
 package com.ye.web.controller;
 
 import com.ye.utils.ResultBean;
-import com.ye.web.domain.Student;
+import com.ye.domain.Student;
+import com.ye.service.StudentService;
+import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class StudentController {
 
+    private final StudentService studentService;
+
+    @Autowired
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
+
     @GetMapping("listStudent")
     public ResultBean listStudent() {
-        List<Student> list = new ArrayList<>();
-        Student s1 = new Student();
-        s1.setId("1");
-        s1.setName("yw");
-        s1.setAge(30);
-
-        list.add(s1);
-
-        Student s2 = new Student();
-        s2.setId("2");
-        s2.setName("stq");
-        s2.setAge(25);
-        list.add(s2);
-
-        return ResultBean.Ok(list);
+        List<Student> students = studentService.listStudent();
+        return ResultBean.Ok(students);
     }
 }

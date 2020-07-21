@@ -46,7 +46,7 @@
 
 
 	<!-- 全局异常处理 -->
-<!--	<bean class="com.unicom.util.exception.CustomerExceptionResolver"></bean>-->
+	<bean class="com.ye.exception.MyException"></bean>
 
 
 </beans>

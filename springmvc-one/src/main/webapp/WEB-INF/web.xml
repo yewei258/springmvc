@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd"
          version="3.1" metadata-complete="true">
-  <display-name>springmvc1</display-name>
+  <display-name>springmvc-one</display-name>
 
   <!-- 容器将使用会话cookie追踪会话ID,防止第一次登录jessionid拼接在url后面 -->
   <session-config>
